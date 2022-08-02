@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListJournal>
+{% for Journal in Journals  %}
+    <Journals>
+        <IdJournal>{{ Journal[0] }}</IdJournal>
+        <IdMembre>{{ Journal[1] }}</IdMembre>
+        <IdFormule>{{ Journal[2] }}</IdFormule>
+        <DateAchat>{{ Journal[3] }}</DateAchat>
+        <IdMarchandise>{{ Journal[4] }}</IdMarchandise>
+        <Quantite>{{ Journal[5] }}</Quantite>
+        <Nom>{{ Journal[6] }}</Nom>
+        <Prix>{{ Journal[7] }}</Prix>
+    </Journals>
+{% endfor %}
+</ListJournal>

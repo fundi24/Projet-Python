@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListeDesMembres>
+{% for membre in membres  %}
+    <membres>
+        <IdMembre>{{ membre[0] }}</IdMembre>
+        <Nom>{{ membre[1] }}</Nom>
+        <Prenom>{{ membre[2] }}</Prenom>
+        <DateNaissance>{{ membre[3] }}</DateNaissance>
+        <Adresse>{{ membre[4] }}</Adresse>
+        <NumeroTelephone>{{ membre[5] }}</NumeroTelephone>
+        <DateInscription>{{ membre[6] }}</DateInscription>
+        <Abonnement>{{ membre[7] }}</Abonnement>
+    </membres>
+{% endfor %}
+</ListeDesMembres>

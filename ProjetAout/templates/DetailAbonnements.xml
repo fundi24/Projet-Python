@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListeDetailAbonnement>
+{% for DetailAbonnement in DetailAbonnements %}
+    <DetailAbonnements>
+        <IdMembre>{{ DetailAbonnement[0] }}</IdMembre>
+        <IdFormule>{{ DetailAbonnement[1] }}</IdFormule>
+        <SeanceDispo>{{ DetailAbonnement[2] }}</SeanceDispo>
+        <NombreSeance>{{ DetailAbonnement[3] }}</NombreSeance>
+        <DateAchat>{{ DetailAbonnement[4] }}</DateAchat>
+    </DetailAbonnements>
+{% endfor %}
+</ListeDetailAbonnement>

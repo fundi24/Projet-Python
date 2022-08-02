@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListFormule>
+{% for formule in ListFormule  %}
+    <formules>
+        <IdFormule>{{ formule[0] }}</IdFormule>
+        <Nom>{{ formule[1] }}</Nom>
+        <NombreDeSeance>{{ formule[2] }}</NombreDeSeance>
+        <Prix>{{ formule[3] }}</Prix>
+    </formules>
+{% endfor %}
+</ListFormule>

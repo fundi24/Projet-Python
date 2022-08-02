@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListMarchandise>
+{% for marchandise in ListMarchandise  %}
+    <marchandises>
+        <Id>{{ marchandise[0] }}</Id>
+        <Nom>{{ marchandise[1] }}</Nom>
+        <Prix>{{ marchandise[2] }}</Prix>
+    </marchandises>
+{% endfor %}
+</ListMarchandise>

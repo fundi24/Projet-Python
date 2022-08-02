@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListMembresPresent>
+{% for membre in MembresPresent  %}
+    <MembresPresent>
+        <IdMembre>{{ membre[0] }}</IdMembre>
+        <DateSeance>{{ membre[1] }}</DateSeance>
+        <Duree>{{ membre[2] }}</Duree>
+    </MembresPresent>
+{% endfor %}
+<total>{{ total }}</total>
+</ListMembresPresent>
