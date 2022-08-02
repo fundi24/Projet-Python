@@ -1,10 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Pos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jscript.js" DEFER></script>
 </head>
-<body>
-$END$
+<body >
+    <!--boutons navigabilité-->
+    <div id="btns">
+        <button class="button" id="btn_Accueil"><a href="/">Accueil</a> </button>
+        <button class="button" id="btn_AjouterMembre">Ajouter membre</button>
+        <button class="button" id="btn_ListeMembre">Liste de membre</button>
+        <button class="button" id="btn_AjouterAbonnement">Ajouter un abonnement</button>
+        <button class="button" id="btn_DetailAbonnement">Liste des abonnements</button>
+        <button class="button" id="btn_Formules">Liste des formules</button>
+        <button class="button" id="btn_AjouterArriveDep">Ajouter ArriveDepart</button>
+        <button class="button" id="btn_ArriveDep">ArriveDepart</button>
+        <button class="button" id="btn_FinArriveDep">Supprimer ArriveDepart</button>
+        <button class="button" id="btn_AjouterMarchandise">Acheter une marchandise</button>
+        <button class="button" id="btn_Marchandises">Liste des marchandises</button>
+        <button class="button" id="btn_Journal">Journal</button>
+
+    </div>
+    <button class="button" id="btn_Pos" style="display: none;"><a href="/pos">Retour</a></button>
+
+    <!--code pour ajouter un membre-->
+    <div id="AjouterMembreForm" style="display: none;">
+        <h1>Ajouter un membre</h1>
+        <label for="Nom">Nom :</label>
+        <input type="text" id="Nom"><br>
+
+        <label for="Prenom">Prenom :</label>
+        <input type="text" id="Prenom"><br>
+
+        <label for="Adresse">Adresse :</label>
+        <input type="text" id="Adresse"><br>
+
+        <label for="NumeroTelephone">Numero de telephone :</label>
+        <input type="text" id="NumeroTelephone"><br>
+
+        <label for="DateNaissance">Date de naissance :</label>
+        <input type="Date" id="DateNaissance"><br>
+
+        <input type="button" value="Ajouter" id="AddMembre">
+    </div>
+
+    <!--code pour afficher des membres-->
+    <div id="AfficherMembre" style="display: none;" class = "Centrer">
+        <h1>Liste de membre</h1>
+        <table id="TableMembre" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">IdMembre</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Date de naissance</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">Numero de telephone</th>
+                    <th scope="col">Date d'inscription</th>
+                    <th scope="col">Abonnement</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--code pour ajouter un abonnement-->
+    <div id="AjouterAbonnementForm" style="display: none;">
+        <h1>Ajouter un abonnement</h1>
+        <label for="IdMembre">Numero du membre</label>
+        <input type="text" id="IdMembre"><br>
+
+        <label for="IdFormule">Numero de la formule</label>
+        <input type="text" id="IdFormule"><br>
+
+        <input type="button" value="Ajouter" id="AddAbonnement">
+    </div>
+
+    <!--code pour afficher les abonnements-->
+    <div id="DetailAbonnement" style="display: none;">
+        <h1>Detail abonnement</h1>
+        <table id="TableDetailAbonnement">
+            <tr>
+                <th>IdMembre</th>
+                <th>IdFormule</th>
+                <th>Seances disponibles</th>
+                <th>Seances total</th>
+                <th>Date de l'achat</th>
+            </tr>
+        </table>
+    </div>
+
+    <!--code pour afficher les formules-->
+    <div id="Formules" style="display: none;">
+        <h1>Formules</h1>
+        <table id="TableFormules">
+            <tr>
+                <th>IdFormule</th>
+                <th>Nom</th>
+                <th>Nombre de seance</th>
+                <th>Prix</th>
+            </tr>
+        </table>
+    </div>
+
+    <!--code pour ajouter un ArriveDep-->
+    <div id="AjouterArriveDepForm" style="display: none;">
+        <h1>Ajouter un arrive depart</h1>
+        <label for="IdMembre">Numero du membre</label>
+        <input type="text" id="IdMembre2"><br>
+
+        <label for="Duree">Nombre d'heures</label>
+        <input type="text" id="Duree"><br>
+
+        <input type="button" value="Ajouter" id="AddArriveDep">
+    </div>
+
+    <!--code pour afficher les arrivées et departs-->
+    <div id="AfficherArriveDep" style="display: none;">
+        <h1>Liste des membres presents</h1>
+        <table id="TableMembrePresent">
+            <tr>
+                <th>IdMembre</th>
+                <th>DateSeance</th>
+                <th>Duree</th>
+            </tr>
+        </table>
+        <table id ="TableTotalArriveDep">
+            <tr>
+                <th>Total</th>
+            </tr>
+        </table>
+    </div>
+
+    <!--code pour supprimer un ArriveDep-->
+    <div id="SuppArriveDepForm" style="display: none;">
+        <h1>Supprimer un ArriveDep</h1>
+        <label for="IdMembre">Numero du membre</label>
+        <input type="text" id="IdMembre4"><br>
+
+        <input type="button" value="Supprimer" id="SuppArriveDep">
+    </div>
+
+    <!--code pour acheter une marchandises-->
+    <div id="AcheterMarchandiseForm" style="display: none;">
+        <h1>Acheter une marchandise</h1>
+        <label for="IdMembre">Numero du membre</label>
+        <input type="text" id="IdMembre3"><br>
+
+        <label for="IdMarchandise">Numero de la marchandise</label>
+        <input type="text" id="IdMarchandise"><br>
+
+        <label for="Quantite">Quantité :</label>
+        <input type="text" id="Quantite"><br>
+
+        <input type="button" value="Ajouter" id="btn_AddMarchandise">
+    </div>
+
+    <!--code pour afficher marchandises-->
+    <div id="Marchandises" style="display: none;">
+        <h1>Liste des Marchandises</h1>
+        <table id="TableMarchandises">
+            <tr>
+                <th>IdMarchandise</th>
+                <th>Nom</th>
+                <th>Prix</th>
+            </tr>
+        </table>
+    </div>
+
+<!--code pour afficher journal-->
+    <div id="Journal" style="display: none;">
+        <h1>Journal</h1>
+        <table id="TableJournal">
+            <tr>
+                <th>IdJournal</th>
+                <th>IdMembre</th>
+                <th>IdFormule</th>
+                <th>Date d'achat</th>
+                <th>IdMarchandise</th>
+                <th>Quantité</th>
+                <th>Nom</th>
+                <th>Prix</th>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>
